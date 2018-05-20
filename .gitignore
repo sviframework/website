@@ -1,0 +1,15 @@
+/.idea
+/app/cache/*
+!app/cache/.gitkeep
+/app/logs/*
+!app/logs/.gitkeep
+/app/config/parameters.php
+/web/.htaccess
+/web/bundles/*
+!web/bundles/.gitkeep
+/web/files/*
+!web/files/.gitkeep
+!web/files/.htaccess
+composer.phar
+composer.lock
+/vendor
