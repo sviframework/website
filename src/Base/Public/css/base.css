@@ -1,0 +1,19 @@
+body {
+    padding: 0;
+    margin: 0;
+}
+
+header {
+    background: #ece7e3;
+    height: 50px;
+}
+header .logo {
+    background: url("../img/logo.svg");
+    width: 180px;
+    height: 50px;
+    display: block;
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
