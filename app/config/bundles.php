@@ -9,4 +9,7 @@ return [
 
     \Base\Bundle::class,
     \Promo\Bundle::class,
+    \User\Bundle::class,
+    \Mail\Bundle::class,
+    \Admin\Bundle::class,
 ];

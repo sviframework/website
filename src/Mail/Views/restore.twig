@@ -1,0 +1,6 @@
+{% extends 'Mail/Views/html.twig' %}
+
+{% block content %}
+    <p>Кто-то, возможно не вы, запросил восстановление пароля на сайте {{ siteurl }}.
+    Для продолжения перейдите по <a href="{{ url('_restore2', { hash:user.getRestoreHash() }) }}">этой ссылке</a>.</p>
+{% endblock %}

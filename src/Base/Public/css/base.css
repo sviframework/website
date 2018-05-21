@@ -1,6 +1,45 @@
 body {
     padding: 0;
     margin: 0;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 16px;
+    color: #444;
+}
+
+b {
+    font-weight: normal;
+    color: #000;
+}
+a {
+    color: #f24841;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+    margin-top: 0;
+}
+h1 {
+    font-size: 32px;
+}
+h2 {
+    font-size: 28px;
+}
+h3 {
+    font-size: 26px;
+    color: #000;
+}
+h4 {
+    font-size: 22px;
+}
+h5 {
+    font-size: 18px;
+    color: #000;
+}
+h6 {
+    font-size: 16px;
 }
 
 header {
@@ -8,7 +47,8 @@ header {
     height: 50px;
 }
 header .logo {
-    background: url("../img/logo.svg");
+    background: url("../img/logo.svg") left 7px no-repeat;
+    background-size: contain;
     width: 180px;
     height: 50px;
     display: block;
@@ -16,4 +56,10 @@ header .logo {
 .container {
     max-width: 1200px;
     margin: 0 auto;
+    box-sizing: border-box;
+    padding: 0 15px;
+}
+
+nav {
+
 }

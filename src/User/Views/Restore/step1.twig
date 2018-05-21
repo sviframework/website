@@ -1,0 +1,8 @@
+{% extends 'Base/Views/base.twig' %}
+
+{% set title = 'Восстановление пароля' %}
+
+{% block content %}
+    <p>{{ trans('form.restore.p1') }}</p>
+    {{ form.render()|raw }}
+{% endblock %}

@@ -1,5 +1,4 @@
 <!doctype html>
-
 <html lang="ru">
 <head>
     <meta charset="utf-8">
@@ -7,11 +6,8 @@
     <title>{% if title %}{{ title }}{% endif %}</title>
     <meta name="author" content="svi framework">
 
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('base/css/base.css') }}">
-
-    <!--[if lt IE 9]>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
-    <![endif]-->
 </head>
 
 <body>
@@ -20,6 +16,24 @@
             <a class="logo" href="/"></a>
         </div>
     </header>
-    <main>{% block content %}{% endblock %}</main>
+    <nav>
+        <ul class="container">
+
+        </ul>
+    </nav>
+    <main>
+        <div class="container">
+            <h1>{{ title }}</h1>
+            {% if alerts %}
+                {% for a in alerts %}
+                    <div class="alert alert-{{ a.type }} alert-dismissable">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                        {{ a.text }}
+                    </div>
+                {% endfor %}
+            {% endif %}
+            {% block content %}{% endblock %}
+        </div>
+    </main>
 </body>
 </html>

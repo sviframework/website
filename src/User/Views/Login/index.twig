@@ -1,0 +1,19 @@
+{% extends 'Base/Views/base.twig' %}
+
+{% set title = "Авторизация" %}
+
+{% block content %}
+    {{ form.renderStart()|raw }}
+    {{ form.renderField('email')|raw }}
+    {{ form.renderField('password')|raw }}
+
+    <div class="form-group">
+        <div class="col-sm-offset-3 col-sm-7">
+            <button type="submit" class="btn btn-primary">{{ trans('form.login.submit') }}</button>
+            <a href="{{ path('_restore1') }}">{{ trans('form.login.restore') }}</a>
+        </div>
+    </div>
+
+    {% set dummy = form.get('submit').setRendered(true) %}
+    {{ form.renderEnd()|raw }}
+{% endblock %}
