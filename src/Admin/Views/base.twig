@@ -8,7 +8,10 @@
     <title>{% if title %}{{ title }} - {% endif %}</title>
 
     {% block styles %}
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="{{ asset('admin/bootstrap/css/bootstrap.min.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('admin/openiconic/css/open-iconic-bootstrap.min.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('admin/css/base.css') }}">
     {% endblock %}
 
     {% block scripts %}
@@ -30,6 +33,18 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <ul class="navbar-nav mr-auto">
+                        {% for items in menu %}
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    {{ items.title }}
+                                </a>
+                                <div class="dropdown-menu">
+                                    {% for item in items.items %}
+                                        <a class="dropdown-item" href="{{ item.url }}">{{ item.title }}</a>
+                                    {% endfor %}
+                                </div>
+                            </li>
+                        {% endfor %}
                         <li class="nav-item active">
                             <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
                         </li>
@@ -42,14 +57,13 @@
                     </ul>
                     <ul class="navbar-nav">
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Dropdown
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                {{ currentUser.getEmail() }}
                             </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="#">Action</a>
-                                <a class="dropdown-item" href="#">Another action</a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="#">Редактировать профиль</a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Something else here</a>
+                                <a class="dropdown-item" href="{{ path('_logout') }}">Выход</a>
                             </div>
                         </li>
                     </ul>

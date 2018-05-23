@@ -13,5 +13,7 @@
 		'twig' => $getParameter('twig', false),
 		'assetsVersion' => $getParameter('assetsVersion', 'v1'),
 		'locale' => $getParameter('locale', 'ru'),
-		'settings' => [],
+		'settings' => [
+
+        ],
 	];

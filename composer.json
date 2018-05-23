@@ -2,6 +2,7 @@
   "name": "svi/skeleton",
   "type": "project",
   "license": "MIT",
+  "minimum-stability": "dev",
   "require": {
     "svi/base": "0.0.*",
     "svi/tengine": "0.0.*",
@@ -9,6 +10,7 @@
     "svi/orm": "0.0.*",
     "svi/crud": "0.0.*",
     "svi/file": "0.0.*",
-    "svi/mail": "0.0.*"
+    "svi/mail": "0.0.*",
+    "svi/settings": "0.0.*"
   }
 }

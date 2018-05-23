@@ -12,6 +12,11 @@ class UserService extends \Svi\HttpBundle\Service\UserService
 
     private $current = false;
 
+    public function getCurrentAdmin()
+    {
+        return $this->getCurrentUser() && $this->getCurrentUser()->getRole() === 'admin' ? $this->getCurrentUser() : null;
+    }
+
     /**
      * @return null|User
      * @throws \ErrorException
@@ -44,9 +49,9 @@ class UserService extends \Svi\HttpBundle\Service\UserService
         return $this->getUserManager()->findOneById($id);
     }
 
-    public function login(User $user)
+    public function login(User $user, $remember = false)
     {
-        $this->loginUser(implode(':', [$user->getId(), $user->getPassword()]));
+        $this->loginUser(implode(':', [$user->getId(), $user->getPassword()]), $remember);
     }
 
     public function hashPassword($password)

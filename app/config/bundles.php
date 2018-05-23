@@ -6,6 +6,7 @@ return [
     \Svi\CrudBundle\Bundle::class,
     \Svi\MailBundle\Bundle::class,
     \Svi\FileBundle\Bundle::class,
+    \Svi\SettingsBundle\Bundle::class,
 
     \Base\Bundle::class,
     \Promo\Bundle::class,

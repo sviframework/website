@@ -34,7 +34,7 @@ class LoginController extends Controller
             }
 
             if ($form->isValid()) {
-                $this->getUserService()->login($user);
+                $this->getUserService()->login($user, true);
                 $this->getAlertsService()->addAlert('success', 'form.login.success');
 
                 return $this->redirect('_admin');
@@ -44,6 +44,13 @@ class LoginController extends Controller
         return $this->render('index', $this->getTemplateParameters([
             'form' => $form,
         ]));
+    }
+
+    public function logoutAction()
+    {
+        $this->getUserService()->logout();
+
+        return $this->redirect('/');
     }
 
 }

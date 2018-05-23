@@ -13,6 +13,7 @@ class Bundle extends \Svi\Service\BundlesService\Bundle
         return [
             'Login'   => [
                 '_login' => '/login:index',
+                '_logout' => '/logout:logout',
             ],
             'Restore' => [
                 '_restore1' => '/restore/1:step1',

@@ -2,7 +2,7 @@
 
 namespace Admin\Controller;
 
-class FrontController extends Controller
+class AdminFrontController extends Controller
 {
 
     public function indexAction()
